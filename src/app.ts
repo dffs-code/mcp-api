@@ -16,12 +16,12 @@ class App {
   }
 
   private middlewares (): void {
-    this.express.use(express.json())
     this.express.use(cors())
+    this.express.use(express.json())
   }
 
   private database (): void {
-    mongoose.connect(process.env.DB_STRING)
+    mongoose.connect('mongodb+srv://admin:admin@mcp-api.vffih.mongodb.net/mcp-api?retryWrites=true&w=majority')
   }
 
   private routes (): void {
